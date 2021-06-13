@@ -52,60 +52,38 @@ public class LongestValidParentheses {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-//        Stack<Character> stack=new Stack<Character>(){};
-////        List<String> list=new ArrayList<>();
-//        public int longestValidParentheses(String s) {
-//            int result=0;
-//            for (int i = 0; i < s.length(); i++) {
-//                if (s.charAt(i)==')'){
-//                    continue;
-//                }
-//                for (int j = i; j < s.length(); j++) {
-////                    System.out.print(j+": "+s.substring(i,j+1)+"\t"+stack);
-//                    if (s.charAt(j)=='('){
-//                        stack.push('(');
-//                    }else if (stack.isEmpty()){
-//                        break;
-//                    }else {
-//                        stack.pop();
-//                    }
-//                    if (stack.isEmpty()){
-//                        int temp=j-i+1;
-//                        if (temp>result){
-//                            result=temp;
-//                        }
-//                    }
-////                    System.out.println("\t"+stack);
-////                    if (stack.isEmpty()){
-////                        list.add(s.substring(i,j+1));
-//////                        break;
-////                    }
-//                }
-//                stack.clear();
-//            }
-////            System.out.println(list);
-//            return result;
-//        }
+        Stack<Character> stack=new Stack<Character>(){};
+//        List<String> list=new ArrayList<>();
         public int longestValidParentheses(String s) {
-            int len=s.length();
-            if (len<=1){
-                return 0;
-            }
-            int[] dp=new int[len];
-            if (s.charAt(0)=='('&&s.charAt(1)==')'){
-                dp[1]=2;
-            }
-            for (int i = 2; i < s.length(); i++) {
-                if (s.charAt(i)==')' && i-dp[i-1]-1>=0 && s.charAt(i-dp[i-1]-1)=='('){
-                    dp[i]=dp[i-1]+dp[i-dp[i-1]-2]+2;
-                }
-            }
             int result=0;
-            for (int i = 0; i < dp.length; i++) {
-                if (dp[i]>result){
-                    result = dp[i];
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i)==')'){
+                    continue;
                 }
+                for (int j = i; j < s.length(); j++) {
+//                    System.out.print(j+": "+s.substring(i,j+1)+"\t"+stack);
+                    if (s.charAt(j)=='('){
+                        stack.push('(');
+                    }else if (stack.isEmpty()){
+                        break;
+                    }else {
+                        stack.pop();
+                    }
+                    if (stack.isEmpty()){
+                        int temp=j-i+1;
+                        if (temp>result){
+                            result=temp;
+                        }
+                    }
+//                    System.out.println("\t"+stack);
+//                    if (stack.isEmpty()){
+//                        list.add(s.substring(i,j+1));
+////                        break;
+//                    }
+                }
+                stack.clear();
             }
+//            System.out.println(list);
             return result;
         }
     }
