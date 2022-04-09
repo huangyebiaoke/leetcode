@@ -68,6 +68,40 @@ class Solution {
         }
         return -1;
     }
+//    int countRange(int[] arr, int low, int high){
+//        int count=0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i]>=low && arr[i]<=high){
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//    public int findDuplicate(int[] nums) {
+//        if (nums==null&&nums.length==0){
+//            return -1;
+//        }
+//        int low = 1;
+//        int high = nums.length-1;
+//        while (low <= high) {
+////            System.out.println(low+" "+high);
+//            int mid = (low + high) >>> 1;
+//            int count=countRange(nums,low,mid);
+//            if (low==high){
+//                if (count>1){
+//                    return low;
+//                }else {
+//                    break;
+//                }
+//            }
+//            if (count > mid-low+1){
+//                high = mid;
+//            }else{
+//                low = mid+1;
+//            }
+//        }
+//        return -1;
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

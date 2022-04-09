@@ -22,6 +22,8 @@
 public class ShuZuZhongZhongFuDeShuZiLcof{
   public static void main(String[] args) {
        Solution solution = new ShuZuZhongZhongFuDeShuZiLcof().new Solution();
+//      System.out.println(solution.findRepeatNumber(new int[]{0, 1, 2, 0, 4, 5, 6, 7, 8, 9}));
+      System.out.println(solution.findRepeatNumber(new int[]{2, 3, 1, 0, 2, 5, 3}));
   }
   //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
