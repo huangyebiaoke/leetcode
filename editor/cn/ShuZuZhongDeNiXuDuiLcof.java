@@ -55,7 +55,7 @@ public class ShuZuZhongDeNiXuDuiLcof {
                 else if (j > hi) a[k] = aux[i++];
                 else if (aux[j] < aux[i]) {
                     a[k] = aux[j++];
-                    sum++;
+                    sum+=(mid-i+1);
                 }
                 else a[k] = aux[i++];
             }
@@ -63,7 +63,7 @@ public class ShuZuZhongDeNiXuDuiLcof {
 
         public int reversePairs(int[] nums) {
             sort(nums);
-            System.out.println(Arrays.toString(nums));
+//            System.out.println(Arrays.toString(nums));
             return sum;
 //            Time Limit Exceeded
 //            int sum = 0;
